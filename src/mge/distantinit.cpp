@@ -9,6 +9,9 @@
 #include "morrowindbsa.h"
 #include "mwbridge.h"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 #define READ_FROM_BUFFER(src, dest, size) memcpy((void*)dest, (void*)src, size); src += size;
 
 

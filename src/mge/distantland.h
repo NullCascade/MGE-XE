@@ -4,7 +4,7 @@
 #include "specificrender.h"
 #include <string>
 #include <vector>
-#include <tr1/unordered_map>
+#include <unordered_map>
 
 
 
@@ -23,12 +23,12 @@ public:
 
     static const DWORD fvfWave = D3DFVF_XYZRHW | D3DFVF_TEX2;
     static const int waveTexResolution = 512;
-    static const float waveTexWorldRes = 2.5f;
+    static constexpr float waveTexWorldRes = 2.5f;
     static const int GrassInstStride = 48;
     static const int MaxGrassElements = 8192;
-    static const float kCellSize = 8192.0;
-    static const float kDistantZBias = 5e-6;
-    static const float kMoonTag = 88888.0f;
+    static constexpr float kCellSize = 8192.0;
+    static constexpr float kDistantZBias = 5e-6;
+    static constexpr float kMoonTag = 88888.0f;
 
     static bool ready;
     static bool isRenderCached;

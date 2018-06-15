@@ -10,6 +10,7 @@
 #include "postshaders.h"
 #include "mmefunctiondefs.h"
 
+#include <cctype>
 
 
 enum SuffixFormatting

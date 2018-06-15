@@ -11,7 +11,7 @@
 #include "d3dwindow.h"
 #include "soup.h"
 #include "feedback.h"
-#include <mm_malloc.h>
+#include <malloc.h>
 
 class D3DOverdrawWindow : public D3DWindow
 {

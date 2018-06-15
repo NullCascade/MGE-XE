@@ -1,6 +1,8 @@
 
 #include "dlmath.h"
 
+#include <algorithm>
+
 //-----------------------------------------------------------------------------
 // BoundingSphere class
 //-----------------------------------------------------------------------------
@@ -234,9 +236,9 @@ ViewFrustum::Containment ViewFrustum::ContainsBox(const BoundingBox& box) const
     {
         D3DXVECTOR4 extent;
 
-        extent.x = abs(D3DXPlaneDotNormal(&frustum[f], &box.vx));
-        extent.y = abs(D3DXPlaneDotNormal(&frustum[f], &box.vy));
-        extent.z = abs(D3DXPlaneDotNormal(&frustum[f], &box.vz));
+        extent.x = std::fabs(D3DXPlaneDotNormal(&frustum[f], &box.vx));
+        extent.y = std::abs(D3DXPlaneDotNormal(&frustum[f], &box.vy));
+        extent.z = std::abs(D3DXPlaneDotNormal(&frustum[f], &box.vz));
         extent.w = D3DXPlaneDotCoord(&frustum[f], &box.centre);
 
         // Fail if centre + projected extents is outside the halfspace

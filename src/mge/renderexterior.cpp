@@ -5,7 +5,7 @@
 #include "configuration.h"
 #include "mwbridge.h"
 
-
+#include <algorithm>
 
 // renderSky - Render atmosphere scattering sky layer and other recorded draw calls on top
 void DistantLand::renderSky()

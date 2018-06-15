@@ -5,7 +5,7 @@
 #include "distantshader.h"
 #include "support/log.h"
 
-
+#include <algorithm>
 
 void DistantLand::cullGrass(const D3DXMATRIX *view, const D3DXMATRIX *proj)
 {

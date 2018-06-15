@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 
 project (MGEXE)
 
-include_directories ("${MGEXE_SOURCE_DIR}/src" "${MGEXE_SOURCE_DIR}/3rdparty/niflib/include" "${MGEXE_SOURCE_DIR}/3rdparty/tootle/src/TootleLib/include")
+include_directories ("${MGEXE_SOURCE_DIR}/src" "${MGEXE_SOURCE_DIR}/3rdparty/niflib/include" "${MGEXE_SOURCE_DIR}/3rdparty/dx3/include" "${MGEXE_SOURCE_DIR}/3rdparty/tootle/src/TootleLib/include")
 link_directories ("${MGEXE_SOURCE_DIR}/lib")
 set (LIBRARY_OUTPUT_PATH "${MGEXE_BINARY_DIR}/bin")
 
@@ -35,7 +35,12 @@ if (CMAKE_COMPILER_IS_GNUCXX)
     # Compile options; optimize, strip symbols and kill stdcall decoration
     set (CMAKE_CXX_FLAGS "-O2 -mstackrealign -ffast-math -fgcse-after-reload -march=pentium4 -Wformat")
     set (CMAKE_SHARED_LINKER_FLAGS "-Wl,-s,--kill-at,--enable-stdcall-fixup")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -static-libgcc")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++")
+    set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_C_FLAGS} -static-libgcc -s")
+    set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS} -static-libgcc -static-libstdc++ -s")
 endif (CMAKE_COMPILER_IS_GNUCXX)
+
 
 if (MSVC_VERSION)
     # Compile options; optimize

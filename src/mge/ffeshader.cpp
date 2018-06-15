@@ -3,6 +3,7 @@
 #include "ffeshader.h"
 #include "support/log.h"
 
+#include <algorithm>
 
 
 using std::string;
