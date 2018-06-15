@@ -1,7 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-# SharpDevelop 4.4
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGEgui_vc2008", "MGEgui_vc2008.csproj", "{21918C99-1B10-4474-88E9-9A9ECD49A94C}"
 EndProject
 Global
@@ -14,6 +15,12 @@ Global
 		{21918C99-1B10-4474-88E9-9A9ECD49A94C}.Debug|x86.Build.0 = Debug|x86
 		{21918C99-1B10-4474-88E9-9A9ECD49A94C}.Release|x86.ActiveCfg = Release|x86
 		{21918C99-1B10-4474-88E9-9A9ECD49A94C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32FADFB2-3EEF-4877-8C24-E5D2F94DB3CE}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = MGEgui_vc2008.csproj

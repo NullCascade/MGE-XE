@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -15,8 +15,21 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
+    <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <StartWorkingDirectory>\Program Files (x86)\Bethesda Softworks\Morrowind\</StartWorkingDirectory>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <TargetFrameworkProfile />
+    <RunCodeAnalysis>False</RunCodeAnalysis>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -31,19 +44,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <NoStdLib>False</NoStdLib>
-    <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <StartWorkingDirectory>\Program Files (x86)\Bethesda Softworks\Morrowind\</StartWorkingDirectory>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <NoWin32Manifest>False</NoWin32Manifest>
-    <SignAssembly>False</SignAssembly>
-    <DelaySign>False</DelaySign>
-    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <TargetFrameworkProfile />
-    <RunCodeAnalysis>False</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -101,13 +101,19 @@
   <ItemGroup>
     <Compile Include="DirectX\DistantLandTextures.cs" />
     <Compile Include="DirectX\DXMain.cs" />
-    <Compile Include="DistantLand\BetterCheckedListBox.cs" />
-    <Compile Include="LightingForm.cs" />
+    <Compile Include="DistantLand\BetterCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LightingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LightingForm.Designer.cs">
       <DependentUpon>LightingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Localization\LocalizationInterface.cs" />
-    <Compile Include="LogViewer.cs" />
+    <Compile Include="LogViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LogViewer.Designer.cs">
       <DependentUpon>LogViewer.cs</DependentUpon>
     </Compile>
@@ -290,6 +296,11 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
